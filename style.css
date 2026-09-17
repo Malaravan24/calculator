@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #293d68,
+            #111827 45%,
+            #070b12
+        );
+
+    padding: 20px;
+}
+
+
+/* ================= CALCULATOR ================= */
+
+.calculator {
+    width: 380px;
+    max-width: 100%;
+
+    padding: 20px;
+
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ================= DISPLAY ================= */
+
+.display {
+    height: 150px;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+#previousOperand {
+    min-height: 25px;
+
+    color: #8f98a8;
+
+    font-size: 18px;
+
+    margin-bottom: 8px;
+
+    word-break: break-all;
+}
+
+
+#currentOperand {
+    width: 100%;
+
+    color: white;
+
+    font-size: 42px;
+
+    font-weight: bold;
+
+    text-align: right;
+
+    overflow-x: auto;
+
+    white-space: nowrap;
+}
+
+
+/* ================= BUTTON GRID ================= */
+
+.buttons {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+}
+
+
+button {
+    height: 65px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.09);
+
+    color: white;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        background 0.2s ease;
+}
+
+
+button:hover {
+    background: rgba(255, 255, 255, 0.17);
+
+    transform: translateY(-2px);
+}
+
+
+button:active {
+    transform: scale(0.94);
+}
+
+
+/* ================= FUNCTION BUTTONS ================= */
+
+.function {
+    color: #ff8f8f;
+
+    background: rgba(255, 80, 80, 0.12);
+}
+
+
+.function:hover {
+    background: rgba(255, 80, 80, 0.2);
+}
+
+
+/* ================= OPERATOR ================= */
+
+.operator {
+    color: #82b5ff;
+
+    background: rgba(70, 130, 255, 0.14);
+}
+
+
+.operator:hover {
+    background: rgba(70, 130, 255, 0.24);
+}
+
+
+/* ================= EQUALS ================= */
+
+.equals {
+    color: #07111e;
+
+    background: #7dd3fc;
+}
+
+
+.equals:hover {
+    background: #a5e5ff;
+}
+
+
+/* ================= ZERO ================= */
+
+.zero {
+    grid-column: span 2;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 420px) {
+
+    .calculator {
+        padding: 15px;
+
+        border-radius: 20px;
+    }
+
+    .display {
+        height: 135px;
+    }
+
+    #currentOperand {
+        font-size: 34px;
+    }
+
+    button {
+        height: 58px;
+
+        font-size: 18px;
+
+        border-radius: 14px;
+    }
+
+    .buttons {
+        gap: 9px;
+    }
+
+}
